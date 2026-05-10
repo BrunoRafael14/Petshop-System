@@ -7,7 +7,7 @@ namespace PetshopSystem.Models
 {
     public class VacinaModel
     {
-        public string? nome {get; set;}
+        public string? Nome {get; set;}
         public int PetId {get; set;}
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PetshopSystem.Models;
+using PetshopSystem.Services.Validacoes;
 
 namespace PetshopSystem.Services
 {
@@ -11,9 +12,9 @@ namespace PetshopSystem.Services
 
         public static ResponsavelModel InstanciarResponsavel(string nome, string telefone, string email)
         {
-            string nomeDefinitivo = FiltrarNome(nome);
-            string telefoneDefinitivo = FiltrarTelefone(telefone);
-            string emailDefinitivo = FiltrarEmail(email);
+            string nomeDefinitivo = ValidacoesGerais.FormartarParaMinusculo(nome);
+            string telefoneDefinitivo = TratarTelefone(telefone);
+            string emailDefinitivo = TratarEmail(email);
 
             ResponsavelModel responsavel = new ResponsavelModel 
             { 
@@ -25,7 +26,7 @@ namespace PetshopSystem.Services
             return responsavel;
         }
 
-        public static string FiltrarTelefone(string telefone)
+        public static string TratarTelefone(string telefone)
         {
             if(telefone.Length == 11)
             {
@@ -37,13 +38,7 @@ namespace PetshopSystem.Services
             }
         }
 
-        public static string FiltrarNome(string nome)
-        {
-            string nomeAtualizado = nome.ToLower();
-            return nomeAtualizado;
-        }
-
-        public static string FiltrarEmail(string email)
+        public static string TratarEmail(string email)
         {
             if (email.Contains("@"))
             {
