@@ -29,7 +29,7 @@ namespace PetshopSystem.Services
 
         public static string TratarStatus(string status)
         {
-            if (!Enum.IsDefined(typeof(Status), status))
+            if (!Enum.TryParse<Status>(status, ignoreCase: true, out _))
             {
                 throw new ArgumentException("Status Inválido");
             }

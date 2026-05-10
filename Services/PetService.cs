@@ -33,19 +33,19 @@ namespace PetshopSystem.Services
 
         public static string TratarNome(string nome)
         {
-            var nomePet = ValidacoesGerais.FormartarParaMinusculo(nome);
+            var nomePet = ValidacoesGerais.FormatarParaMinusculo(nome);
             return nomePet;
         }
 
         public static string TratarRaca(string raca)
         {
-            var racaPet = ValidacoesGerais.FormartarParaMinusculo(raca);
+            var racaPet = ValidacoesGerais.FormatarParaMinusculo(raca);
             return racaPet;
         }
 
         public static string TratarEspecie(string especie)
         {
-            var especiePet = ValidacoesGerais.FormartarParaMinusculo(especie);
+            var especiePet = ValidacoesGerais.FormatarParaMinusculo(especie);
             return especiePet;
         }
 
@@ -64,7 +64,7 @@ namespace PetshopSystem.Services
         {
             if (idade > 35)
             {
-                throw new Exception ("Idade Inválida");
+                throw new ArgumentException ("Idade Inválida");
             }
             return idade;
         }

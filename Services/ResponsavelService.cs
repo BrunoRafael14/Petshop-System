@@ -12,7 +12,7 @@ namespace PetshopSystem.Services
 
         public static ResponsavelModel InstanciarResponsavel(string nome, string telefone, string email)
         {
-            string nomeDefinitivo = ValidacoesGerais.FormartarParaMinusculo(nome);
+            string nomeDefinitivo = ValidacoesGerais.FormatarParaMinusculo(nome);
             string telefoneDefinitivo = TratarTelefone(telefone);
             string emailDefinitivo = TratarEmail(email);
 
@@ -34,7 +34,7 @@ namespace PetshopSystem.Services
             }
             else
             {
-                return "Formatação inválida";
+                throw new ArgumentException ("Formatação inválida");
             }
         }
 
@@ -46,7 +46,7 @@ namespace PetshopSystem.Services
             }
             else
             {
-                return "Email Incorreto";
+                throw new ArgumentException ("Email Incorreto");
             }
         }
     }

@@ -7,7 +7,7 @@ namespace PetshopSystem.Services.Validacoes
 {
     public class ValidacoesGerais
     {
-        public static string FormartarParaMinusculo(string nome)
+        public static string FormatarParaMinusculo(string nome)
         {
             string nomeAtualizado = nome.ToLower();
             return nomeAtualizado;

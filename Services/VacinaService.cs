@@ -9,17 +9,17 @@ namespace PetshopSystem.Services
 {
     public class VacinaService
     {
-        public static VacinaModel InstanciarResponsavel(string nome, int petId)
+        public static VacinaModel InstanciarVacina(string nome, int petId)
         {
-            string nomeDefinitivo = ValidacoesGerais.FormartarParaMinusculo(nome);
+            string nomeDefinitivo = ValidacoesGerais.FormatarParaMinusculo(nome);
             
-            VacinaModel responsavel = new VacinaModel 
+            VacinaModel vacina = new VacinaModel 
             { 
                 Nome = nomeDefinitivo,
                 PetId = petId 
             };
 
-            return responsavel;
+            return vacina;
         }
         
         // public static int ValidarPetId(int id)
